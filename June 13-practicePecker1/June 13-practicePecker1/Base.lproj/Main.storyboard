@@ -17,21 +17,52 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NP0-TE-Tg2">
-                                <rect key="frame" x="20" y="79" width="353" height="300"/>
+                                <rect key="frame" x="20" y="79" width="353" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="6vU-fc-mWP"/>
+                                    <constraint firstAttribute="height" constant="200" id="6vU-fc-mWP"/>
                                 </constraints>
                             </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JId-TD-D5I">
+                                <rect key="frame" x="20" y="309" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyY-md-Lno">
+                                <rect key="frame" x="331" y="309" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="J6v-yu-aPj">
+                                <rect key="frame" x="0.0" y="340" width="293" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="49s-uF-aka"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="myPickerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="3ZO-JK-jrp"/>
+                                </connections>
+                            </datePicker>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="J6v-yu-aPj" firstAttribute="top" secondItem="JId-TD-D5I" secondAttribute="bottom" constant="10" id="475-Db-t1b"/>
                             <constraint firstItem="NP0-TE-Tg2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="59w-IE-nDs"/>
+                            <constraint firstItem="JId-TD-D5I" firstAttribute="top" secondItem="NP0-TE-Tg2" secondAttribute="bottom" constant="30" id="7IU-bS-Pp6"/>
+                            <constraint firstAttribute="trailing" secondItem="J6v-yu-aPj" secondAttribute="trailing" constant="100" id="TFS-Ee-hcG"/>
+                            <constraint firstItem="J6v-yu-aPj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WgX-Bf-BJZ"/>
                             <constraint firstAttribute="trailing" secondItem="NP0-TE-Tg2" secondAttribute="trailing" constant="20" id="bjv-cu-gTG"/>
+                            <constraint firstItem="JId-TD-D5I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hP8-Ya-dDF"/>
                             <constraint firstItem="NP0-TE-Tg2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="l44-yM-kwI"/>
+                            <constraint firstItem="gyY-md-Lno" firstAttribute="top" secondItem="NP0-TE-Tg2" secondAttribute="bottom" constant="30" id="t9O-g0-QtP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gyY-md-Lno" secondAttribute="trailing" constant="20" id="yjr-DV-efL"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myDatePicker" destination="J6v-yu-aPj" id="IDe-wY-rIN"/>
+                        <outlet property="myLabelLeft" destination="JId-TD-D5I" id="3dz-OB-MYK"/>
+                        <outlet property="myLabelRight" destination="gyY-md-Lno" id="NYd-uN-Mcp"/>
                         <outlet property="myPickerView" destination="NP0-TE-Tg2" id="ZbE-GT-vE0"/>
                     </connections>
                 </viewController>
